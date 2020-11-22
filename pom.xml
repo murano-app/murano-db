@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.murano</groupId>
+    <artifactId>MuranoDB</artifactId>
+    <version>0.0.1</version>
+
+    <properties>
+        <postgres.driver.version>42.2.18</postgres.driver.version>
+        <flyway-maven-plugin.version>7.0.4</flyway-maven-plugin.version>
+        <db.user>muranodb_owner</db.user>
+        <db.password>muranodb.owner</db.password>
+        <db.url>jdbc:postgresql://localhost:5432/muranodb</db.url>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>${flyway-maven-plugin.version}</version>
+                <configuration>
+                    <user>${db.user}</user>
+                    <password>${db.password}</password>
+                    <url>${db.url}</url>
+                    <sqlMigrationSeparator>__</sqlMigrationSeparator>
+                    <locations>
+                        <location>
+                            filesystem:sql
+                        </location>
+                    </locations>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.postgresql</groupId>
+                        <artifactId>postgresql</artifactId>
+                        <version>${postgres.driver.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+</project>

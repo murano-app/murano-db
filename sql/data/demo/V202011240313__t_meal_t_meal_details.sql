@@ -2,7 +2,7 @@
 INSERT INTO t_meal (restaurant_id, price)
 SELECT r.id, '19.99'
 FROM t_restaurant r
-WHERE r.name = 'Bratwürstchen Restaurant';
+WHERE r.name = 'Bratwursthaus';
 
 INSERT INTO t_meal_details
 VALUES (currval('t_meal_id_seq'), 'de', 'Wurst mit Pommes', '150g/100g', 'Warme Speisen'),
@@ -12,7 +12,7 @@ VALUES (currval('t_meal_id_seq'), 'de', 'Wurst mit Pommes', '150g/100g', 'Warme 
 INSERT INTO t_meal (restaurant_id, price)
 SELECT r.id, '14.99'
 FROM t_restaurant r
-WHERE r.name = 'Bratwürstchen Restaurant';
+WHERE r.name = 'Bratwursthaus';
 
 INSERT INTO t_meal_details
 VALUES (currval('t_meal_id_seq'), 'de', 'Kartoffelsalat', '200g', 'Vorspeisen'),
@@ -22,7 +22,7 @@ VALUES (currval('t_meal_id_seq'), 'de', 'Kartoffelsalat', '200g', 'Vorspeisen'),
 INSERT INTO t_meal (restaurant_id, price)
 SELECT r.id, '1.49'
 FROM t_restaurant r
-WHERE r.name = 'Bratwürstchen Restaurant';
+WHERE r.name = 'Bratwursthaus';
 
 INSERT INTO t_meal_details
 VALUES (currval('t_meal_id_seq'), 'de', 'Cola', '330ml', 'Getränke'),
@@ -33,7 +33,7 @@ VALUES (currval('t_meal_id_seq'), 'de', 'Cola', '330ml', 'Getränke'),
 INSERT INTO t_meal (restaurant_id, price)
 SELECT r.id, '150'
 FROM t_restaurant r
-WHERE r.name = 'Murano Restaurant';
+WHERE r.name = 'La Mamaliga';
 
 INSERT INTO t_meal_details
 VALUES (currval('t_meal_id_seq'), 'en', 'Steak with Sauce', 'Pork steak with delicious onion sauce', 'Steaks'),
@@ -43,7 +43,7 @@ VALUES (currval('t_meal_id_seq'), 'en', 'Steak with Sauce', 'Pork steak with del
 INSERT INTO t_meal (restaurant_id, price)
 SELECT r.id, '120'
 FROM t_restaurant r
-WHERE r.name = 'Murano Restaurant';
+WHERE r.name = 'La Mamaliga';
 
 INSERT INTO t_meal_details
 VALUES (currval('t_meal_id_seq'), 'en', 'Long island', 'Buy it to your girlfriend and sex is guaranteed',
@@ -55,7 +55,7 @@ VALUES (currval('t_meal_id_seq'), 'en', 'Long island', 'Buy it to your girlfrien
 INSERT INTO t_meal (restaurant_id, price)
 SELECT r.id, '120'
 FROM t_restaurant r
-WHERE r.name = 'Murano Restaurant';
+WHERE r.name = 'La Mamaliga';
 
 INSERT INTO t_meal_details
 VALUES (currval('t_meal_id_seq'), 'en', 'Pina colada', 'Feel yourself like in Hawaii', 'Alcohol drinks'),
@@ -65,7 +65,7 @@ VALUES (currval('t_meal_id_seq'), 'en', 'Pina colada', 'Feel yourself like in Ha
 INSERT INTO t_meal (restaurant_id, price)
 SELECT r.id, '70'
 FROM t_restaurant r
-WHERE r.name = 'Murano Restaurant';
+WHERE r.name = 'La Mamaliga';
 
 INSERT INTO t_meal_details
 VALUES (currval('t_meal_id_seq'), 'en', 'Limonade', 'Extremely overpriced', 'Non alcoholic drinks'),

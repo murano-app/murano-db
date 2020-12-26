@@ -1,7 +1,6 @@
 CREATE TABLE t_order_meal
 (
     id            bigserial PRIMARY KEY,
-    pending       boolean DEFAULT false,
     meal_id       bigint NOT NULL,
     meal_amount   int    NOT NULL,
     table_id      bigint    NOT NULL,

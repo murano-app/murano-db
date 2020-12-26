@@ -9,11 +9,9 @@ CREATE TABLE t_table
     last_message_id int,
 
     CONSTRAINT unq_table_restaurant_id_table_nr
-        UNIQUE (table_nr, restaurant_id),
+        UNIQUE (table_nr, restaurant_id, waiter_chat_id),
     CONSTRAINT unq_table_group_chat_id_last_message_id
         UNIQUE (group_chat_id, last_message_id),
-    CONSTRAINT unq_table_nr_waiter_chat_id
-        UNIQUE (table_nr, waiter_chat_id),
     CONSTRAINT fk_table_restaurant_id
         FOREIGN KEY (restaurant_id)
             REFERENCES t_restaurant (id)

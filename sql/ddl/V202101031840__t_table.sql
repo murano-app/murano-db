@@ -1,0 +1,1 @@
+ALTER TABLE t_table DROP CONSTRAINT fk_table_waiter_chat_id;

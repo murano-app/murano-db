@@ -55,6 +55,13 @@
             </properties>
         </profile>
         <profile>
+            <id>test</id>
+            <properties>
+                <db.url>${env.JDBC_DATABASE_URL}</db.url>
+                <data.location>filesystem:sql/data/test</data.location>
+            </properties>
+        </profile>
+        <profile>
             <id>local</id>
             <properties>
                 <db.url>jdbc:postgresql://localhost:5432/muranodb?user=muranodb_owner&amp;password=muranodb.owner</db.url>

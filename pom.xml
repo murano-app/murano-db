@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.murano</groupId>
-    <artifactId>MuranoDB</artifactId>
+    <artifactId>murano-db</artifactId>
     <version>0.4.3</version>
 
     <properties>
-        <postgres.driver.version>42.2.18</postgres.driver.version>
-        <flyway-maven-plugin.version>7.0.4</flyway-maven-plugin.version>
+        <postgres.driver.version>42.2.27</postgres.driver.version>
+        <flyway-maven-plugin.version>9.16.1</flyway-maven-plugin.version>
     </properties>
 
     <dependencies>
@@ -28,7 +28,7 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>${flyway-maven-plugin.version}</version>
                 <configuration>
-                    <url>${db.url}</url>
+                    <url>jdbc:postgresql://localhost:5432/muranodb?user=muranodb_owner&amp;password=muranodb.owner</url>
                     <sqlMigrationSeparator>__</sqlMigrationSeparator>
                     <locations>
                         <location>
@@ -38,7 +38,7 @@
                             filesystem:sql/data/common
                         </location>
                         <location>
-                            ${data.location}
+                            filesystem:sql/data/test
                         </location>
                     </locations>
                 </configuration>
@@ -46,27 +46,4 @@
         </plugins>
     </build>
 
-    <profiles>
-        <profile>
-            <id>demo</id>
-            <properties>
-                <db.url>${env.JDBC_DATABASE_URL}</db.url>
-                <data.location>filesystem:sql/data/demo</data.location>
-            </properties>
-        </profile>
-        <profile>
-            <id>test</id>
-            <properties>
-                <db.url>${env.JDBC_DATABASE_URL}</db.url>
-                <data.location>filesystem:sql/data/test</data.location>
-            </properties>
-        </profile>
-        <profile>
-            <id>local</id>
-            <properties>
-                <db.url>jdbc:postgresql://localhost:5432/muranodb?user=muranodb_owner&amp;password=muranodb.owner</db.url>
-                <data.location>filesystem:sql/data/test</data.location>
-            </properties>
-        </profile>
-    </profiles>
 </project>

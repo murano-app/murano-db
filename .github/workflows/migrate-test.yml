@@ -1,0 +1,19 @@
+name: Flyway Migrate
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Flyway Migrate
+        uses: joshuaavalon/flyway-action@v3.0.0
+        with:
+          url: jdbc:postgresql://db-postgresql-nyc1-81912-do-user-13828702-0.b.db.ondigitalocean.com:25060/defaultdb
+          user: ${{ secrets.TEST_DB_USER }}
+          password: ${{ secrets.TEST_DB_PASSWORD }}
+          locations: filesystem:./sql/ddl,filesystem:./sql/data/test

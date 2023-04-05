@@ -17,3 +17,5 @@ jobs:
           user: ${{ secrets.TEST_DB_USER }}
           password: ${{ secrets.TEST_DB_PASSWORD }}
           locations: filesystem:./sql/ddl,filesystem:./sql/data/test
+        env:
+          FLYWAY_VALIDATE_MIGRATION_NAMING=true

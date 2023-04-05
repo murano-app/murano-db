@@ -31,6 +31,7 @@
                     <url>jdbc:postgresql://localhost:5432/muranodb?user=muranodb_owner&amp;password=muranodb.owner</url>
                     <sqlMigrationSeparator>__</sqlMigrationSeparator>
                     <cleanDisabled>false</cleanDisabled>
+                    <validateMigrationNaming>true</validateMigrationNaming>
                     <locations>
                         <location>
                             filesystem:sql/ddl

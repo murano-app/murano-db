@@ -30,12 +30,10 @@
                 <configuration>
                     <url>jdbc:postgresql://localhost:5432/muranodb?user=muranodb_owner&amp;password=muranodb.owner</url>
                     <sqlMigrationSeparator>__</sqlMigrationSeparator>
+                    <cleanDisabled>false</cleanDisabled>
                     <locations>
                         <location>
                             filesystem:sql/ddl
-                        </location>
-                        <location>
-                            filesystem:sql/data/common
                         </location>
                         <location>
                             filesystem:sql/data/test

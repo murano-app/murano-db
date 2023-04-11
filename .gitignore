@@ -8,6 +8,9 @@
 *.iml
 *.iws
 
+# VSCode
+.vscode/
+
 # Maven
 log/
 target/

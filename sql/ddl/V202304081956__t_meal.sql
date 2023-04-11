@@ -1,0 +1,1 @@
+CREATE INDEX idx_meal_uuid ON t_meal (meal_uuid)

@@ -6,7 +6,7 @@
 
     <groupId>com.murano</groupId>
     <artifactId>murano-db</artifactId>
-    <version>0.4.3</version>
+    <version>0.5.0</version>
 
     <properties>
         <postgres.driver.version>42.5.4</postgres.driver.version>

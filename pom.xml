@@ -9,7 +9,7 @@
     <version>0.4.3</version>
 
     <properties>
-        <postgres.driver.version>42.2.27</postgres.driver.version>
+        <postgres.driver.version>42.5.4</postgres.driver.version>
         <flyway-maven-plugin.version>9.16.1</flyway-maven-plugin.version>
     </properties>
 

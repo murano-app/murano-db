@@ -2,7 +2,7 @@ name: Flyway Migrate
 
 on:
   push:
-    branches: [ main ] ## change to main when it's time to deploy
+    branches: [ main ]
 
 jobs:
   migrate:

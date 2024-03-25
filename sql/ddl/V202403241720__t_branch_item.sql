@@ -23,8 +23,7 @@ ALTER TABLE t_branch_item
 UPDATE t_branch_item
 SET availability = CASE
                        WHEN available IS TRUE THEN 'AVAILABLE'::item_availability
-                       WHEN available IS FALSE THEN 'HIDDEN'::item_availability
-                       ELSE 'NOT_AVAILABLE'::item_availability
+                       ELSE 'HIDDEN'::item_availability
     END;
 
 --make the new column not nullable

@@ -39,4 +39,3 @@ ALTER TABLE t_order_item
     ADD CONSTRAINT fk_order_item_item_id
         FOREIGN KEY (item_id)
             REFERENCES t_item (id);
-

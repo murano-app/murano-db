@@ -1,0 +1,2 @@
+ALTER TYPE staff_role ADD VALUE 'SUPPORT' before 'MANAGER';
+ALTER TYPE staff_role ADD VALUE 'ADMIN' before 'MANAGER';

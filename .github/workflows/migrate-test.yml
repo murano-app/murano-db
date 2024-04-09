@@ -19,3 +19,22 @@ jobs:
           locations: filesystem:./sql/ddl,filesystem:./sql/data/test
         env:
           FLYWAY_VALIDATE_MIGRATION_NAMING: true
+
+  run-e2e-api-test:
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+      - name: Trigger Workflow in Another Repository
+        run: |
+          target_repo_owner="murano-app" 
+          target_repo_name="murano-e2e-api"  
+          source_service="murano-db"  
+          event_type="trigger-e2e-api" 
+
+          curl -L \
+            -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.E2E_API_TOKEN }}" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            https://api.github.com/repos/$target_repo_owner/$target_repo_name/dispatches \
+            -d "{\"event_type\": \"$event_type\", \"client_payload\": {\"source_service\": \"$source_service\", \"unit\": false, \"integration\": true}}"

@@ -22,7 +22,7 @@ jobs:
 
   run-e2e-api-test:
     runs-on: ubuntu-latest
-    needs: deploy
+    needs: migrate
     steps:
       - name: Trigger Workflow in Another Repository
         run: |

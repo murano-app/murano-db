@@ -9,3 +9,8 @@ Start postgres docker container using following command:
 ## Migrate Murano DB
 
     mvn flyway:migrate
+
+
+## Restore from backup
+    createdb -U <username> <new_database_name>
+    psql -U <username> <new_database_name> < /sql/backups/{date}_backup.sql
